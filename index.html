@@ -61,6 +61,7 @@
             </div>
             
             <button type="submit" class="btn btn-primary" id="add">Submit</button>
+            <button class="btn btn-primary" id="clear" onclick="clearMe()">Clear List</button>
      
           <div class="container">
           <h2 class="text-center">Your items:</h2>
@@ -79,6 +80,11 @@
       </div>
 
       <script>
+        function clearMe(params) {
+            arr = [];
+            localStorage.setItem('itemsJson',JSON.stringify(arr));
+            getAndUpdate();
+        }
         function update(params) {
             let title = document.getElementById('title').value;
             let desc = document.getElementById('desc').value;
